@@ -7,11 +7,20 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 moveDir;
     public Rigidbody2D _rb;
+    public SpriteRenderer plSprite;
 
     // Update is called once per frame
     void Update()
     {
         moveDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized;
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            plSprite.flipX = true;
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            plSprite.flipX = false;
+        }
     }
 
     private void FixedUpdate()
