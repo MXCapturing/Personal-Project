@@ -11,6 +11,7 @@ public class FauxGravityBody : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attractor = GameObject.Find("World").GetComponent<FauxGravityAttractor>();
         myTransform = transform;
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         _rb.gravityScale = 0;
